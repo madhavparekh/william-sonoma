@@ -12,7 +12,8 @@ const app = express();
 
 app.use(cors());
 
-const port = 4000;
+const port = process.env.PORT || 4000;
+
 const LISTING_URL =
   'https://www.westelm.com/services/catalog/v4/category/shop/new/all-new/index.json';
 
