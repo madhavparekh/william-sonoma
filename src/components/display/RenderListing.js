@@ -25,26 +25,19 @@ const styles = (theme) => ({
   card: {
     maxWidth: 400,
   },
+  title: {
+    fontSize: '15px',
+    fontWeight: 'bold',
+  },
   media: {
     height: 0,
     paddingTop: '56.25%', // 16:9
+    cursor: 'pointer',
   },
   actions: {
     display: 'flex',
   },
-  expand: {
-    transform: 'rotate(0deg)',
-    transition: theme.transitions.create('transform', {
-      duration: theme.transitions.duration.shortest,
-    }),
-    marginLeft: 'auto',
-    [theme.breakpoints.up('sm')]: {
-      marginRight: -8,
-    },
-  },
-  expandOpen: {
-    transform: 'rotate(180deg)',
-  },
+
   avatar: {
     backgroundColor: red[500],
   },
@@ -86,12 +79,13 @@ class RenderListing extends React.Component {
           <CardHeader
             avatar={
               <Avatar aria-label="Recipe" className={classes.avatar}>
-                ${listing.priceRange.low} "-" {listing.priceRange.selling.high}
+                ${listing.priceRange.selling.high}
               </Avatar>
             }
             title={name}
           />
           <CardMedia
+            style={{ cursor: 'link' }}
             className={classes.media}
             image={listing.hero.href}
             title={name}
