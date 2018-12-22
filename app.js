@@ -1,3 +1,8 @@
+/*
+ *  Created a dummy API to fix CORS issue
+ *
+ */
+
 const express = require('express');
 const cors = require('cors');
 const app = express();

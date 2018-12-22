@@ -21,14 +21,15 @@ class Layout extends React.Component {
       <div
         style={{
           display: 'flex',
-          width: this.state.isMobile ? '95%' : '1000px',
+          width: this.state.isMobile ? '95%' : '1000px', //responsive when screen width below 481
           margin: 'auto',
           flexDirection: 'row',
           flexWrap: 'wrap',
           justifyContent: 'space-around',
         }}
       >
-        {this.props.listings &&
+        {/*rendering listing thru iteration*/
+        this.props.listings &&
           this.props.listings.map((listing, indx) => {
             return (
               <RenderListing
