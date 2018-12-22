@@ -6,10 +6,20 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.16.4",
+    "nodemon": "^1.18.9",
     "superagent": "^4.0.0-beta.5"
   },
   "scripts": {
-    "start": "node app.js",
-    "heroku-postbuild": "cd client && yarn && yarn run build"
+    "start": "nodemon app.js",
+    "client": "cd client && yarn start",
+    "yarnclient": "cd client && yarn",
+    "yarnserver": "yarn",
+    "yarnit": "concurrently  - kill-others \"yarn run yarnserver\" \"yarn run yarnclient\"",
+    "server": "yarn start",
+    "heroku-postbuild": "cd client && yarn && yarn run build",
+    "startdev": "concurrently  - kill-others \"yarn run server\" \"yarn run client\""
+  },
+  "devDependencies": {
+    "concurrently": "^4.1.0"
   }
 }
