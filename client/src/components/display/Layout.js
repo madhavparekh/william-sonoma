@@ -13,11 +13,10 @@ class Layout extends React.Component {
   }
 
   onWindowResize = () => {
-    this.setState({ isMobile: window.innerWidth < 480 });
+    this.setState({ isMobile: window.innerWidth <= 480 });
   };
 
   render() {
-    console.log(this.props.listings);
     return (
       <div
         style={{

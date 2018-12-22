@@ -17,7 +17,6 @@ export class Display extends React.Component {
   }
 
   render() {
-    console.log(this.props.listings);
     return (
       <div>
         {this.props.listings && (

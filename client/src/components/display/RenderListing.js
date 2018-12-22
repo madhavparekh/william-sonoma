@@ -26,7 +26,6 @@ const styles = (theme) => ({
     maxWidth: 400,
   },
   title: {
-    fontSize: '15px',
     fontWeight: 'bold',
   },
   media: {
@@ -67,7 +66,6 @@ class RenderListing extends React.Component {
   render() {
     const { listing, isMobile, classes } = this.props;
     const name = listing.name.replace('&#8482;', '');
-    console.log(this.state.open);
     return (
       <div
         style={{
@@ -76,14 +74,19 @@ class RenderListing extends React.Component {
         }}
       >
         <Card className={classes.card}>
-          <CardHeader
-            avatar={
-              <Avatar aria-label="Recipe" className={classes.avatar}>
-                ${listing.priceRange.selling.high}
-              </Avatar>
-            }
-            title={name}
-          />
+          <a
+            href={listing.links.www}
+            style={{ textDecoration: 'none', cursor: 'pointer' }}
+          >
+            <CardHeader
+              avatar={
+                <Avatar aria-label="Recipe" className={classes.avatar}>
+                  ${listing.priceRange.selling.high}
+                </Avatar>
+              }
+              title={name}
+            />
+          </a>
           <CardMedia
             style={{ cursor: 'link' }}
             className={classes.media}

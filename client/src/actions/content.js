@@ -2,7 +2,7 @@ import request from 'superagent';
 import ContentTypes from '../action-types/Content';
 const types = ContentTypes;
 
-const LISTING_URL = '/services/catalog/v4/category/shop/new/all-new/index.json';
+const LISTING_URL = '/api';
 
 const fetchListingsObj = (listings) => {
   return {
