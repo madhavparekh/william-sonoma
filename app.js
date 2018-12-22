@@ -15,9 +15,7 @@ const LISTING_URL =
   'https://www.westelm.com/services/catalog/v4/category/shop/new/all-new/index.json';
 
 app.get('/api', (req, res) => {
-  console.log(req);
   request.get(LISTING_URL).then((data) => {
-    console.log(data.body);
     res.send(data.body);
   });
 });
