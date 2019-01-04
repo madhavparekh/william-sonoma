@@ -5,3 +5,8 @@ $ cd william-sonoma
 $ yarn  
 $ yarn run yarnclient  
 \$ yarn run startdev
+
+## Client Side Testing Script
+
+$ cd client  
+$ yarn test
